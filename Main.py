@@ -30,7 +30,8 @@ if to_do == "new":
         file.close()
         print("saved")
 
-    # edit mode looking up a file might need import os
+    # edit mode looking up a file in a working directory for outside gonna need a path and import os
+
 else:
     print("edit mode")
     to_edit=input(str("File name?"))
@@ -51,7 +52,7 @@ else:
          ending = input(str("save? y/n "))
          if ending == "y":
             filename = input(str("Filename? "))
-            file = open(filename +".txt","a")
+            file = open(filename +".txt","w")
             file.write(output)
             file.close()
             print("saved")
@@ -59,5 +60,7 @@ else:
     else:
         delete = str(input('Delete y/n? '))
         if delete == "y":
-            os.remove( filename + ".txt")
+            #filename = input(str("Filename? "))
+            file.close()
+            os.remove(to_edit + '.txt')
             print("removed")
